@@ -28,7 +28,7 @@
         <img id="display-image" src="./200w.gif" 
              alt="Cute Cats Cuddling" class="w-48 h-48 mx-auto mb-4 rounded-xl object-cover">
         
-        <h1 id="question" class="text-2xl font-bold text-gray-800 mb-6">Kamu Mau gak Jadi Valentine Aku? 😄</h1>
+        <h1 id="question" class="text-2xl font-bold text-gray-800 mb-6">Kamu Mau gak Jadi Pacar Aku? 😄</h1>
         
         <div class="flex gap-4 justify-center items-center h-16">
             <button id="btn-mau" class="transition-fast bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-8 rounded-full shadow-lg z-20">
@@ -96,7 +96,7 @@
 
         // Logic Tombol MAU
         btnMau.addEventListener('mouseover', () => {
-            if (mauHoverCount < 3) {
+            if (mauHoverCount < 5) {
                 moveButton(btnMau);
                 trollText.innerText = messages[Math.floor(Math.random() * messages.length)];
                 mauHoverCount++;
@@ -128,14 +128,14 @@
 
         // Final Action (Klik MAU setelah capek)
         btnMau.addEventListener('click', () => {
-            if (mauHoverCount >= 3) {
+            if (mauHoverCount >= 5) {
                 successScreen.classList.remove('hidden');
             }
         });
 
         // Tambahan untuk Mobile (Touch Start) agar lebih responsif di HP
         btnMau.addEventListener('touchstart', (e) => {
-             if (mauHoverCount < 3) {
+             if (mauHoverCount < 5) {
                 e.preventDefault(); // Mencegah 'click' di trigger di mobile sebelum lari
                 moveButton(btnMau);
                 trollText.innerText = messages[Math.floor(Math.random() * messages.length)];
@@ -153,3 +153,4 @@
 </body>
 
 </html>
+
